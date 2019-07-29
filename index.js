@@ -9,20 +9,21 @@ const countLetters = require('./countLetters');
 const findKeyByValue = require('./findKeyByValue');
 const letterPosition = require('./letterPositions');
 const takeUntil = require('./takeUntil');
-const map = require('./map');
+const map = require('./maps');
 const findKey = require('./findKey');
 
 module.exports = {
-  head:   head,
-  tail:   tail,
-  middle: middle,
-  without: without,
-  flatten: flatten,
-  countOnly: countOnly,
-  countLetters: countLetters,
-  findKeyByValue: findKeyByValue,
-  letterPosition: letterPosition,
-  takeUntil: takeUntil,
-  map: map,
-  findKey: findKey,
+head,
+tail,
+middle,
+without,
+flatten,
+countOnly,
+countLetters,
+findKeyByValue,
+letterPosition,
+takeUntil,
+map,
+findKey
 };
+console.log(module.exports)
