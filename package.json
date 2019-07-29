@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@chen.liang/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "mini lodash project",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -19,7 +19,11 @@
     "type": "git",
     "url": "git+https://github.com/mrchenliang/lotide.git"
   },
-  "author": "",
+  "author": {
+    "name" : "Chen Liang", 
+    "email" : "cl.1995@hotmail.com", 
+    "url" : "https://chenliang.ca"}
+    ,
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mrchenliang/lotide/issues"
