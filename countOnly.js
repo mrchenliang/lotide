@@ -1,16 +1,4 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    return console.log(`🛑🛑🛑 Assertion Failed: ${actual} === ${expected}`);
-  }
-};
-
-// TEST CODE
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
-
+const assertEqual = require('./assertEqual');
 const countOnly = function(allItems, itemsToCount) {
   const results = {};
 
@@ -27,6 +15,7 @@ const countOnly = function(allItems, itemsToCount) {
 
   return results;
 };
+module.exports = countOnly.js
 
 const firstNames = [
   "Karl",

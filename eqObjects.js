@@ -1,24 +1,4 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    return console.log(`🛑🛑🛑 Assertion Failed: ${actual} === ${expected}`);
-  }
-};
-
-// TEST CODE
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
-
-const eqArrays = function(actual, expected) {
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const eqArrays = require('./eqArrays');
 
 const eqObjects = function(object1, object2) {
   let finder1 = Object.keys(object1);
@@ -42,6 +22,8 @@ const eqObjects = function(object1, object2) {
   }
   return false;
 };
+
+module.exports = eqObjects;
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
