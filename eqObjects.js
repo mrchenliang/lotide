@@ -1,26 +1,17 @@
-const eqArrays = require('./eqArrays');
+const eqArrays = require("./eqArrays");
 
 const eqObjects = function(object1, object2) {
-  let finder1 = Object.keys(object1);
-  let finder2 = Object.keys(object2);
-  
-  if (finder1.length === finder2.length) {
-    for (const item of finder2) {
-      if (object1[item] !== object2[item]) {
-        if (Array.isArray(object1[item]) && Array.isArray(object2[item])) {
-          if (!eqArrays(object1[item], object2[item])) {
-            return false;
-          } else if (eqObjects(object1[item], object2[item])) {
-            return true;
-          }
-        }
-
-        return false;
+  if (Object.keys(object1).length !== Object.keys(object2).length) return false;
+  else {
+    for (const item in object1) {
+      if (object1[item] instanceof Object) {
+        if (!eqObjects(object1[item], object2[item])) return false;
+      } else {
+        if (object1[item] !== object2[item]) return false;
       }
     }
     return true;
   }
-  return false;
 };
 
 module.exports = eqObjects;
@@ -38,3 +29,8 @@ console.log(eqObjects(cd, dc)); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 console.log(eqObjects(cd, cd2)); // => false
+
+console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => true
+
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => false
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })); // => false
